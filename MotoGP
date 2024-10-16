@@ -64,3 +64,20 @@ const groupedData = motoGP.reduce((acc, event) => {
 }, {});
 
 console.log(groupedData);
+
+{
+  "Italy": {
+    "winningResults": [
+      { "name": "Andrea Dovizioso", "winLocation": "Losail, Qatar" },
+      { "name": "Valentino Rossi", "winLocation": "De Jerez, Spain" },
+      { "name": "Andrea Dovizioso", "winLocation": "Mugello, Italy" }
+    ],
+    "totalWins": 3
+  },
+  "UK": {
+    "winningResults": [
+      { "name": "Cal Crutchlow", "winLocation": "Autodromo, Argentine" }
+    ],
+    "totalWins": 1
+  }
+}
