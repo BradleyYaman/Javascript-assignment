@@ -1,0 +1,66 @@
+const motoGP = [
+  {
+    circuit: 'Losail',
+    location: 'Qatar',
+    winner: {
+      firstName: 'Andrea',
+      lastName: 'Dovizioso',
+      country: 'Italy'
+    }
+  },
+  {
+    circuit: 'Autodromo',
+    location: 'Argentine',
+    winner: {
+      firstName: 'Cal',
+      lastName: 'Crutchlow',
+      country: 'UK'
+    }
+  },
+  {
+    circuit: 'De Jerez',
+    location: 'Spain',
+    winner: {
+      firstName: 'Valentino',
+      lastName: 'Rossi',
+      country: 'Italy'
+    }
+  },
+  {
+    circuit: 'Mugello',
+    location: 'Italy',
+    winner: {
+      firstName: 'Andrea',
+      lastName: 'Dovizioso',
+      country: 'Italy'
+    }
+  }
+];
+
+// Grouping by the winning country
+const groupedData = motoGP.reduce((acc, event) => {
+  const country = event.winner.country;
+  const winnerName = ${event.winner.firstName} ${event.winner.lastName};
+  const winLocation = ${event.circuit}, ${event.location};
+
+  // Check if the country is already in the accumulator
+  if (!acc[country]) {
+    acc[country] = {
+      winningResults: [],
+      totalWins: 0
+    };
+  }
+
+  // Add the win details to the country's results
+  acc[country].winningResults.push({
+    name: winnerName,
+    winLocation: winLocation
+  });
+  
+  // Increment total wins for the country
+  acc[country].totalWins += 1;
+
+  return acc;
+}, {});
+
+console.log(groupedData);
